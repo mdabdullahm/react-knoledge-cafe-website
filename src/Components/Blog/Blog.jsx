@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import { BiSolidBookmarkHeart } from "react-icons/bi";
 
 const Blog = ({ blog, handleAddBookmark, handleMarkAsRead }) => {
-    const { title, cover, reading_time, author_img, author, posted_date, hashtags } = blog;
+    
+    const { id, title, cover, reading_time, author_img, author, posted_date, hashtags } = blog;
     
     return (
         <div className='py-4 border-b-2 last:border-b-0'>
@@ -34,7 +35,8 @@ const Blog = ({ blog, handleAddBookmark, handleMarkAsRead }) => {
                 }
             </p>
             
-            <button onClick={() => handleMarkAsRead(reading_time)} className='text-purple-600 font-bold underline'>
+            {/* CHANGED: এখানে এখন id এবং reading_time দুটোই পাঠানো হচ্ছে */}
+            <button onClick={() => handleMarkAsRead(id, reading_time)} className='text-purple-600 font-bold underline'>
                 Mark As read
             </button>
         </div>

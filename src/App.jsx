@@ -18,8 +18,11 @@ function App() {
     }
   }
 
-  const handleMarkAsRead = time => {
+  const handleMarkAsRead = (id, time) => {
     setReadingTime(prevReadingTime => prevReadingTime + parseInt(time));
+    
+    const remainingBookmarks = bookmarks.filter(bookmark => bookmark.id !== id);
+    setBookmarks(remainingBookmarks);
   }
 
   return (
