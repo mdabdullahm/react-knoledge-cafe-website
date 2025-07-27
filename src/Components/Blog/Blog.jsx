@@ -26,7 +26,6 @@ const Blog = ({ blog, handleAddBookmark, handleMarkAsRead }) => {
                 </div>
             </div>
 
-            {/* ব্লগ টাইটেল রেসপন্সিভ করা হয়েছে */}
             <h2 className='text-2xl md:text-4xl mb-4 font-semibold'>{title}</h2>
 
             <p className='text-blue-600 mb-4'>
