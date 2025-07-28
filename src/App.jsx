@@ -1,4 +1,4 @@
-// App.jsx
+// src/App.jsx
 
 import { useState } from "react"
 import Blogs from "./Components/Blogs/Blogs"
@@ -20,18 +20,19 @@ function App() {
 
   const handleMarkAsRead = (id, time) => {
     setReadingTime(prevReadingTime => prevReadingTime + parseInt(time));
-    
     const remainingBookmarks = bookmarks.filter(bookmark => bookmark.id !== id);
     setBookmarks(remainingBookmarks);
   }
 
   return (
-    <div className="max-w-6xl mx-auto p-4 lg:p-0">
-      <Header></Header>
-      <main className="md:flex md:gap-6">
-        <Blogs handleAddBookmark={handleAddBookmark} handleMarkAsRead={handleMarkAsRead}></Blogs>
-        <Bookmarks bookmarks={bookmarks} readingTime={readingTime}></Bookmarks>
-      </main>
+    <div className="font-sans bg-white dark:bg-gray-900 transition-colors duration-300 min-h-screen">
+      <div className="max-w-6xl mx-auto p-4 lg:p-0">
+          <Header />
+          <main className="md:flex md:gap-6">
+            <Blogs handleAddBookmark={handleAddBookmark} handleMarkAsRead={handleMarkAsRead} />
+            <Bookmarks bookmarks={bookmarks} readingTime={readingTime} />
+          </main>
+      </div>
     </div>
   )
 }
